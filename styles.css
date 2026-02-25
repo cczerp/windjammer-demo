@@ -1,48 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Open+Sans:wght@400;600&display=swap');
+
 :root {
   /* Core */
-  --bg-light: #f4f4f4;        /* light gray background */
-  --text-dark: #2b2b2b;      /* main text */
-  --text-muted: #6b6b6b;     /* secondary text */
-
+  --bg-dark: #1A1A1F;        /* Charcoal Harbor background */
+  --text-off-white: #F2EFEA; /* Off white text */
+  --text-muted: #A8A5A0;     /* muted text */
   /* Brand */
-  --purple-main: #4b2e83;    /* deep muted purple */
-  --purple-soft: #6a4fa3;    /* lighter accent purple */
-  --gold-main: #c9a24d;      /* warm gold */
-  --gold-soft: #e1c77a;      /* subtle highlight gold */
-
+  --purple-main: #3B1E57;    /* Deep Nautical Purple */
+  --purple-soft: #5D3A7A;    /* softer purple */
+  --gold-main: #C49A3A;      /* Weathered Brass */
+  --gold-soft: #D6B46A;      /* lighter brass */
+  --orange-accent: #E66A1E;  /* Ember Orange */
   /* UI */
-  --border-light: #dddddd;
-  --white: #ffffff;
+  --border-dark: #333338;
+  --section-bg: #25252B;     /* Slightly lighter than bg-dark */
 }
 
 * {
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
 }
 
 body {
   margin: 0;
-  background-color: var(--bg-light);
-  color: var(--text-dark);
+  background-color: var(--bg-dark);
+  color: var(--text-off-white);
   line-height: 1.6;
 }
 
 .header,
 .hero {
-  padding: 2rem;
+  padding: 4rem 2rem;
   text-align: center;
-  background: var(--purple-main);
-  color: var(--white);
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('assets/images/octopus-logo.png') center/contain no-repeat,
+    var(--purple-main);
+  color: var(--text-off-white);
+  position: relative;
 }
 
 .header h1,
 .hero h1 {
-  color: var(--white);
+  color: var(--gold-main);
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(196, 154, 58, 0.5);
 }
 
 .header p,
 .hero p {
   color: var(--gold-soft);
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
 }
 
 .header .meta,
@@ -51,75 +67,103 @@ body {
 }
 
 .section {
-  padding: 2rem;
+  padding: 3rem 2rem;
   max-width: 800px;
   margin: auto;
-  background: var(--white);
-  border: 1px solid var(--border-light);
+  background: var(--section-bg);
+  border: 1px solid var(--border-dark);
   margin-bottom: 1rem;
+  position: relative;
+}
+
+.section:nth-child(even) {
+  background:
+    linear-gradient(rgba(26, 26, 31, 0.9), rgba(26, 26, 31, 0.9)),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231A1A1F"/><path d="M0 50 L100 50 M50 0 L50 100" stroke="%23333338" stroke-width="1"/></svg>') center/cover;
+}
+
+.section-about h2::before {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 80px;
+  background: url('assets/images/octopus-logo.png') center/contain no-repeat;
+  margin: 0 auto 1rem;
 }
 
 h2, h3 {
-  color: var(--purple-main);
-}
-
-h2::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: var(--gold-main);
-  margin-top: 0.5rem;
+  color: var(--gold-main);
+  position: relative;
+  padding-bottom: 0.5rem;
 }
 
 .buttons {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .btn,
 .btn-primary {
   display: inline-block;
   margin: 0.5rem;
-  padding: 0.75rem 1.25rem;
+  padding: 0.75rem 1.5rem;
   background: var(--gold-main);
-  color: #1f1f1f;
+  color: var(--purple-main);
   text-decoration: none;
   font-weight: bold;
   border-radius: 4px;
   border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .btn:hover,
 .btn-primary:hover {
-  background: var(--gold-soft);
+  background: var(--gold-main);
+  color: var(--purple-main);
+  box-shadow: 0 0 15px rgba(196, 154, 58, 0.7);
+  transform: translateY(-2px);
 }
 
 .btn.secondary,
 .btn-secondary {
   background: transparent;
-  color: var(--white);
+  color: var(--gold-main);
   border: 2px solid var(--gold-main);
+  transition: all 0.3s ease;
 }
 
 .btn.secondary:hover,
 .btn-secondary:hover {
-  background: var(--gold-main);
-  color: #1f1f1f;
+  background: var(--orange-accent);
+  color: var(--text-off-white);
+  border-color: var(--orange-accent);
+  box-shadow: 0 0 15px rgba(230, 106, 30, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Tentacle divider */
+.tentacle-divider {
+  height: 30px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><path d="M0 10 Q 25 5, 50 10 T 100 10" stroke="%23C49A3A" fill="none" stroke-width="2"/></svg>') center/contain no-repeat;
+  margin: 2rem 0;
 }
 
 .footer {
   text-align: center;
-  padding: 1rem;
+  padding: 2rem;
   font-size: 0.85rem;
   color: var(--text-muted);
+  background: var(--section-bg);
+  border-top: 1px solid var(--border-dark);
 }
 
 .menu-page {
-  background: var(--bg-light);
+  background: var(--bg-dark);
 }
 
 .menu-image {
-  background: var(--white);
-  border: 1px solid var(--border-light);
+  background: var(--section-bg);
+  border: 1px solid var(--border-dark);
   padding: 0.75rem;
 }
