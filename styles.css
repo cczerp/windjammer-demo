@@ -294,6 +294,23 @@ h2, h3 {
   transform: translateY(-2px);
 }
 
+/* ── Menu grid ─────────────────────────────────────── */
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ── Menu sections — light panels on dark ──────────── */
 .menu-section {
   background: #F4F1E8;
@@ -301,8 +318,6 @@ h2, h3 {
   border-radius: 8px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.7);
   padding: 50px;
-  max-width: 800px;
-  margin: 0 auto 2rem;
 }
 
 .menu-section p,
