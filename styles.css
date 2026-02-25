@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Open+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@700;800&family=Open+Sans:wght@400;600&display=swap');
 
 :root {
   /* Core */
@@ -26,7 +26,19 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 800;
 }
 
-h1, h2 {
+h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 4.5rem;
+  background: linear-gradient(180deg, #ffffff 0%, #e8e0d0 60%, #c8b88a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 18px rgba(196,154,58,0.35)) drop-shadow(0 3px 6px rgba(0,0,0,0.8));
+}
+
+h2 {
   background: linear-gradient(180deg, #f5d36c, #c49a3a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -35,7 +47,7 @@ h1, h2 {
 
 body {
   margin: 0;
-  background: radial-gradient(circle at top center, #4a2375 0%, #2a0f3f 40%, #0f0b18 100%);
+  background: radial-gradient(circle at 50% 25%, #2e1050 0%, #100820 35%, #080508 100%);
   color: var(--text-off-white);
   line-height: 1.6;
   min-height: 100vh;
@@ -45,8 +57,8 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="200" height="200" filter="url(%23n)" opacity="0.05"/></svg>');
-  opacity: 0.05;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="4" stitchTiles="stitch"/></filter><rect width="200" height="200" filter="url(%23n)" opacity="0.12"/></svg>');
+  opacity: 0.12;
   pointer-events: none;
   z-index: 9999;
 }
@@ -179,7 +191,7 @@ h2, h3 {
 }
 
 .menu-page {
-  background: radial-gradient(circle at top center, #2a0f3f 0%, #0f0b18 60%, #000000 100%);
+  background: radial-gradient(circle at 50% 15%, #200b38 0%, #090610 45%, #030203 100%);
 }
 
 /* Glowing gold divider */
