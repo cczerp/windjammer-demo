@@ -311,6 +311,13 @@ h2, h3 {
   }
 }
 
+/* Stacks two sections vertically inside one grid column */
+.menu-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 /* ── Menu sections — light panels on dark ──────────── */
 .menu-section {
   background: #F4F1E8;
